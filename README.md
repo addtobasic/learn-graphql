@@ -1,6 +1,8 @@
 # learn-webpack
 
 とりあえずここらへんをやります
+- [React, GraphQL, Rails でアプリケーションを作る
+](https://zenn.dev/lilac/books/37bdf5d90b5f9b/viewer/e22e29)
 - [Apollo Client で始める GraphQL
 ](https://qiita.com/sotszk/items/b3c63c2bf08aca61805e)
 - [Next.js：Apollo Client の構築手順
