@@ -11,10 +11,21 @@ const FETCH_BOOKS = gql`
   }
 `;
 
-function App() {
-  const { data: { books } = {} } = useQuery(FETCH_BOOKS);
+type Book = {
+  id: string;
+  title: string;
+};
 
-  return <div></div>;
+function App() {
+  const { data: { books = [] } = {} } = useQuery(FETCH_BOOKS);
+
+  return (
+    <div>
+      {books.map((book: Book) => (
+        <div key={book.id}>{book.title}</div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
