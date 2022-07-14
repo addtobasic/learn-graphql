@@ -1,27 +1,13 @@
 import React from "react";
 import "./App.css";
-import { useQuery, gql } from "@apollo/client";
-
-const FETCH_BOOKS = gql`
-  query {
-    books {
-      id
-      title
-    }
-  }
-`;
-
-type Book = {
-  id: string;
-  title: string;
-};
+import { useBooksQuery } from "./graphql/generated";
 
 function App() {
-  const { data: { books = [] } = {} } = useQuery(FETCH_BOOKS);
+  const { data: { books = [] } = {} } = useBooksQuery();
 
   return (
     <div>
-      {books.map((book: Book) => (
+      {books.map((book) => (
         <div key={book.id}>{book.title}</div>
       ))}
     </div>
